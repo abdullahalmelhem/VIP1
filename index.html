@@ -448,7 +448,7 @@
             try {
                 const response = await fetch(imgUrl);
                 const blob = await response.blob();
-                const file = new File([blob], "security-pass.png", { type: "image/png" });
+                const file = new File([blob], "security-pass.jpg", { type: "image/jpeg" });
                 if (navigator.share) {
                     await navigator.share({
                         title: 'تصريح دخول',
@@ -458,7 +458,7 @@
                 } else {
                     const link = document.createElement('a');
                     link.href = window.URL.createObjectURL(blob);
-                    link.download = 'security-pass.png';
+                    link.download = 'security-pass.jpg';
                     link.click();
                 }
             } catch (error) {
